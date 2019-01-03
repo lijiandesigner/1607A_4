@@ -1,0 +1,5 @@
+﻿<option value="-1">请选择职位</option>
+@foreach (var item in ViewBag.role)
+{
+    <option value="@item.Value">@item.Text</option>
+}

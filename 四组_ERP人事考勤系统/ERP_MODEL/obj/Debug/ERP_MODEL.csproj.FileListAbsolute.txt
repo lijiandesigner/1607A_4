@@ -1,0 +1,8 @@
+D:\练习技能\四组_ERP人事考勤系统\ERP_MODEL\obj\Debug\ERP_MODEL.csprojAssemblyReference.cache
+D:\练习技能\四组_ERP人事考勤系统\ERP_MODEL\obj\Debug\ERP_MODEL.csproj.CoreCompileInputs.cache
+D:\练习技能\四组_ERP人事考勤系统\ERP_MODEL\bin\Debug\ERP_MODEL.dll
+D:\练习技能\四组_ERP人事考勤系统\ERP_MODEL\bin\Debug\ERP_MODEL.pdb
+D:\练习技能\四组_ERP人事考勤系统\ERP_MODEL\bin\Debug\Newtonsoft.Json.dll
+D:\练习技能\四组_ERP人事考勤系统\ERP_MODEL\obj\Debug\ERP_MODEL.csproj.CopyComplete
+D:\练习技能\四组_ERP人事考勤系统\ERP_MODEL\obj\Debug\ERP_MODEL.dll
+D:\练习技能\四组_ERP人事考勤系统\ERP_MODEL\obj\Debug\ERP_MODEL.pdb
