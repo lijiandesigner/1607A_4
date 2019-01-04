@@ -149,6 +149,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DepBossController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PunchController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,6 +177,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\body.css" />
+    <Content Include="css\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -186,7 +189,9 @@
     <Content Include="Image\19001198932d18747e789cf27.jpg" />
     <Content Include="Image\201901020712415a18a96d510ba3f1302aba74e90c8cf0.png" />
     <Content Include="Image\8501bf32ff0d9d9b74f8b494aebdf31c_t010461c547354fb45f.jpg" />
+    <Content Include="Image\8bcLQqF.png" />
     <Content Include="Image\986757b964b1333c9d9e57fd9273364e_Img339823674.jpg" />
+    <Content Include="Image\cloud.jpg" />
     <Content Include="Image\hu.jpg" />
     <Content Include="Image\icon13.gif" />
     <Content Include="Image\icon14.gif" />
@@ -226,6 +231,7 @@
     <Content Include="Views\Staff\Add.cshtml" />
     <Content Include="Views\Staff\Role.cshtml" />
     <Content Include="Views\DepBoss\Index.cshtml" />
+    <Content Include="Views\Punch\Punch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

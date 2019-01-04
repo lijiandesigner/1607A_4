@@ -55,5 +55,21 @@ namespace ERP_DAL
         {
             return content.staffs.Where(m => m.JobNumber == JobNumber || m.StaffName == Name).ToList();
         }
+        public StaffModel JudgeSraff(string JobNumber, string StaffPassword)
+        {
+            var jie = content.staffs.Where(m => m.JobNumber == JobNumber && m.StaffPassword == StaffPassword).FirstOrDefault();
+            if (jie != null)
+            {
+                StaffModel model = new StaffModel();
+                model.StaffId = jie.StaffId;
+                model.StaffName = jie.StaffName;
+                return model;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
     }
 }

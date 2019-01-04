@@ -52,5 +52,10 @@ namespace ERP_Api.Controllers
         {
             return bll.TShowStaff(Name, JobNumber);
         }
+        [HttpGet]
+        public StaffModel JudgeSraff([FromUri]string JobNumber, string StaffPassword)
+        {
+            return bll.JudgeSraff(JobNumber,StaffPassword);
+        }
     }
 }

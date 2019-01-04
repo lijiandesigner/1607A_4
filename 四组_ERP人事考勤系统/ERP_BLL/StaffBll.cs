@@ -46,5 +46,11 @@ namespace ERP_BLL
         {
             return dal.TShowStaff(Name, JobNumber);
         }
+        //打卡查询
+        public StaffModel JudgeSraff(string JobNumber, string StaffPassword)
+        {
+            return dal.JudgeSraff(JobNumber,StaffPassword);
+
+        }
     }
 }
