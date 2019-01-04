@@ -83,5 +83,14 @@ namespace ERPMVC.Controllers
                            };
             return PartialView("Role");
         }
+        [HttpGet]
+        public ActionResult StaffUpd(int id)
+        {
+            return View();
+        }
+        public ActionResult StaffUpd(StaffViewModel Staff)
+        {
+            return View();
+        }
     }
 }
