@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = "~/Views/CWMater.cshtml";
+}
+
+<script src="~/Content/js/bootstrap.min.js"></script>
+
+<div style="width:450px;height:500px;border:solid;background-color:aliceblue;margin-left:100px;margin-top:20px;">
+    <img src="~/Image/untitled.png" style="margin-top:-20px;margin-left:35px;" />
+    <div style="width:443px;height:70px;background-color:#d0fff3;float:left;margin-top:-70px;">
+        <h3 style="color:#019999;margin-left:170px;">个税计算器</h3>
+    </div>
+    <table style="margin-top:25px;margin-left:50px;">
+        <tr>
+            <td><span style="color:red"> * </span>税前工资 </td>
+            <td><input id="Text1" type="text" style="margin-left:20px;" /> 元 </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="Checkbox1" type="checkbox" style="margin-left:20px;margin-top:20px;" />  五险一金</td>
+        </tr>
+    </table>
+    @*<div style="width:65px;height:27px;background-color:#00cc99">
+            <img src="~/Image/jisuan.png" />
+            <input type="button" name="name" value="计算" style="margin-left:20px;margin-top:px;" />
+        </div>*@
+    <input id="Button1" type="button" value="计算" style="color:white;background-color:#00cc99;margin-left:100px;margin-top:15px;" class="btn btn-toolbar" />
+    <input id="Button1" type="button" value="重置" style="color:white;background-color:#ff9900;margin-left:70px;margin-top:15px;" class="btn btn-orange" />
+    <hr />
+    <table style="margin-top:25px;margin-left:60px;">
+        <tr>
+            <td>起税点 </td>
+            <td><input id="Text1" type="text" style="margin-left:20px;" /> 元 </td>
+        </tr>
+        <tr>
+            <td>税率 </td>
+            <td><input id="Text1" type="text" style="margin-left:20px;margin-top:10px;" /> % </td>
+        </tr>
+        <tr>
+            <td>个税 </td>
+            <td><input id="Text1" type="text" style="margin-left:20px;margin-top:10px;" /> 元 </td>
+        </tr>
+        <tr>
+            <td>五险一金 </td>
+            <td><input id="Text1" type="text" style="margin-left:20px;margin-top:10px;" /> 元 </td>
+        </tr>
+        <tr>
+            <td>实发 </td>
+            <td><input id="Text1" type="text" style="margin-left:20px;margin-top:10px;" /> 元 </td>
+        </tr>
+    </table>
+    <h5 style="color:#ada6a6;margin-top:30px;margin-left:50px;">个税 = (税前工资 - 各类社会保险费-起征点) * 税率</h5>
+</div>
+
+

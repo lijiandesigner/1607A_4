@@ -17,5 +17,10 @@ namespace ERPMVC.Controllers
             List<StaffViewModel> list = JsonConvert.DeserializeObject<List<StaffViewModel>>(str);
             return View(list);
         }
+
+        public ActionResult Zhu()
+        {
+            return View();
+        }
     }
 }

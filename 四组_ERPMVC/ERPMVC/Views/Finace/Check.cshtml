@@ -1,0 +1,72 @@
+﻿
+
+@{
+    Layout = "~/Views/CWMater.cshtml";
+}
+
+
+<h3>考勤部薪资明细</h3>
+<div style="float:left">
+    <input id="Button1" type="button" value="导入" class="btn btn-white" style="color:azure;margin-left:20px;background-color:#19aa8d" />
+    <input id="Button1" type="button" value="导出" class="btn btn-white" style="color:azure;margin-left:20px;background-color:#19aa8d" />
+</div>
+<div style="margin-left:300px;float:left;margin-top:-40px;">
+    <input id="BtnAll" type="button" value="全部" class="btn btn-white" onclick="All()" />
+    <input id="BtnZai" type="button" value="在职" class="btn btn-white" onclick="Zai()" />
+    <input id="ButLi" type="button" value="离职" class="btn btn-white" onclick="Li()" />
+    <input id="Text1" type="text" placeholder="刘备..." style="border-radius:10px;height:35px;width:170px;" class="text-justify" />
+    <input type="button" name="name" value="搜索" class="btn btn-white" />
+</div>
+
+<div style="margin-top:70px;">
+    <table class="table table-head-alt">
+        <tr>
+            <th style="color:#5ad1a9">工号</th>
+            <th style="color:#5ad1a9">姓名</th>
+            <th style="color:#5ad1a9">部门</th>
+            <th style="color:#5ad1a9">入职日期</th>
+            <th style="color:#5ad1a9">五险一金</th>
+            <th style="color:#5ad1a9">迟到</th>
+            <th style="color:#5ad1a9">请假</th>
+            <th style="color:#5ad1a9">纳税</th>
+            <th style="color:#5ad1a9">基本工资</th>
+            <th style="color:#5ad1a9">实发工资</th>
+            <th style="color:#5ad1a9">日期</th>
+        </tr>
+        @*@foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item</td>
+                    <td>@item</td>
+                    <td>@item</td>
+                    <td>@item</td>
+                    <td>@item</td>
+                    <td>@item</td>
+                    <td>@item</td>
+                    <td>@item</td>
+                    <td>@item</td>
+                    <td>@item</td>
+                    <td>@item</td>
+                </tr>
+            }*@
+
+    </table>
+</div>
+<script>
+    function All() {
+        $("#BtnAll").css('background-color', '#19aa8d');
+        $("#BtnZai").css('background-color', '#e4e4e4');
+        $("#ButLi").css('background-color', '#e4e4e4');
+    }
+    function Zai() {
+        $("#BtnZai").css('background-color', '#19aa8d');
+        $("#ButLi").css('background-color', '#e4e4e4');
+        $("#BtnAll").css('background-color', '#e4e4e4');
+    }
+    function Li() {
+        $("#ButLi").css('background-color', '#19aa8d');
+        $("#BtnAll").css('background-color', '#e4e4e4');
+        $("#BtnZai").css('background-color', '#e4e4e4');
+    }
+</script>
+
