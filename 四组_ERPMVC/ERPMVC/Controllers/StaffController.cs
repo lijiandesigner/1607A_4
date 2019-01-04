@@ -10,7 +10,6 @@ namespace ERPMVC.Controllers
 {
     public class StaffController : Controller
     {
-        // GET: Staff
         public ActionResult Index()
         {
             int id = 3;
