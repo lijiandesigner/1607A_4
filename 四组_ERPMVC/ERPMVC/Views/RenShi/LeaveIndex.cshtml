@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = "~/Views/RSMater.cshtml";
+}
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<div class="pageheader">
+    <h2><i class="fa fa-home">万亿科技有限公司</i> 员工请假</h2>
+    <div class="breadcrumb-wrapper">
+        <ol class="breadcrumb">
+            <li><a href="index.html">员工请假</a><span class="badge" style="background-color:red">@ViewBag.listNum</span></li>
+            <li><a href="index.html">请假审核结果</a></li>
+        </ol>
+    </div>
+    <h3>人事部请假管理</h3>
+    <div style="float:left">
+    </div>
+    <div style="margin-left:300px;float:left;margin-top:-40px;">
+    </div>
+
+    <div style="margin-top:70px;">
+        <table class="table table-head-alt">
+            <tr>
+                <th style="color:#5ad1a9">工号</th>
+                <th style="color:#5ad1a9">姓名</th>
+                <th style="color:#5ad1a9">部门</th>
+                <th style="color:#5ad1a9">请假日期</th>
+                <th style="color:#5ad1a9">到假日期</th>
+                <th style="color:#5ad1a9">请假原因</th>
+                <th style="color:#5ad1a9">状态</th>
+                <th style="color:#5ad1a9">详情</th>
+            </tr>
+            @foreach (var item in ViewBag.list)
+                {
+                    <tr>
+                        <td>@item.staffs.JobNumber</td>
+                        <td>@item.staffs.StaffName</td>
+                        <td>@item.staffs.Roles.departmens.DepartmentName</td>
+                        <td>@item.StartTime</td>
+                        <td>@item.EndTime</td>
+                        <td>@item.LeaveCause</td>
+                        <td>@item.LeaveState</td>
+                        <td><a>个人详情</a></td>
+                    </tr>
+                }
+
+        </table>
+    </div>
+</div>

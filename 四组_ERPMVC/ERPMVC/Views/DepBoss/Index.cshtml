@@ -1,4 +1,7 @@
-﻿@model IEnumerable<ERPMVC.Models.StaffViewModel>
+﻿@{
+    Layout = "~/Views/RSMater.cshtml";
+}
+@model IEnumerable<ERPMVC.Models.StaffViewModel>
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,11 +18,14 @@
     <script src="~/1/jquery.unobtrusive-ajax.js"></script>
 </head>
 <body>
-    @*@using (Ajax.BeginForm("bufen1", "Home", new AjaxOptions { UpdateTargetId = "box111" }))
+    @using (Ajax.BeginForm("bufen1", "Home", new AjaxOptions { UpdateTargetId = "box111" }))
         {
-            <input id="Submit1" type="submit" value="submit" class="btn btn-primary" />
-        }*@
-    <header>
+    <h2>
+        <lable>员工工号：</lable><input id="Text1" type="text" name="gh" />
+        <input id="Submit1" type="submit" value="查询" class="btn btn-primary" />
+    </h2>
+        }
+    @*<header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">Carousel</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +49,7 @@
                 </form>
             </div>
         </nav>
-    </header>
+    </header>*@
     <main role="main">
         @*<div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -98,73 +104,75 @@
         <!-- Wrap the rest of the page in another container to center all the content. -->
         <div class="container marketing">
             <!-- Three columns of text below the carousel -->
-            <div class="row">
-                <div class="col-lg-3">
+            @*<div class="row">
+                <div class="col-lg-4">
                     <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
                     <h2>添加员工</h2>
                     <p>添加员工的基本信息，以及分配员工职位</p>
                     <p><a class="btn btn-secondary" href="#" role="button" onclick="add()">添加一个 &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
                     <h2>审批请假</h2>
                     <p>审核员工请假状况，驳回或者是同意</p>
                     <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                    <h2>考勤情况</h2>
+                    <h2>员工离职</h2>
                     <p>查看员工每日的考勤状况以及今日的考勤状态</p>
                     <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
-                <div class="col-lg-3">
-                    <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                    <h2>财务报表</h2>
-                    <p>查看员工的工资情况，以及月底发放工资</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-            </div><!-- /.row -->
+           
+            </div><!-- /.row -->*@
             <!-- START THE FEATURETTES -->
             <div id="box111">
-                    @foreach (var item in Model)
+                @foreach (var item in Model)
+                {
+                    if (item.StaffId % 2 == 0)
                     {
-                        if (item.StaffId % 2 == 0)
-                        {
-                            <hr class="featurette-divider">
+                        <hr class="featurette-divider">
 
-                            <div class="row featurette">
-                                <div class="col-md-7 order-md-2">
-                                    <h2 class="featurette-heading">@item.StaffName</h2>
-                                    <p class="lead">@item.Identitycard</p>
-                                </div>
-                                <div class="col-md-5 order-md-1">
-                                    <img class="featurette-image img-fluid mx-auto" src="@item.HandImg" alt="Alternate Text" style="width:500px;height:500px" />
-                                </div>
+                        <div class="row featurette">
+                            <div class="col-md-7 order-md-2">
+                                <h2 class="featurette-heading">@item.StaffName</h2>
+                                <p class="lead">@item.Identitycard</p>
                             </div>
-                        }
-                        else
-                        {
-                            <hr class="featurette-divider">
-                            <div class="row featurette">
-                                <div class="col-md-7">
-                                    <h2 class="featurette-heading">@item.StaffName</h2>
-                                    <p class="lead">@item.Identitycard</p>
-                                </div>
-                                <div class="col-md-5">
-                                    <img class="featurette-image img-fluid mx-auto" src="@item.HandImg" alt="Alternate Text" style="width:500px;height:500px" />
-                                </div>
+                            <div class="col-md-5 order-md-1">
+                                <img class="featurette-image img-fluid mx-auto" src="@item.HandImg" alt="Alternate Text" style="width:500px;height:500px" />
                             </div>
-                        }
-
+                        </div>
                     }
-                </div>
+                    else
+                    {
+                        <hr class="featurette-divider">
+                        <div class="row featurette">
+                            <div class="col-md-7">
+                                <h2 class="featurette-heading">@item.StaffName</h2>
+                                <p class="lead">@item.Identitycard</p>
+                            </div>
+                            <div class="col-md-5">
+                                <img class="featurette-image img-fluid mx-auto" src="@item.HandImg" alt="Alternate Text" style="width:500px;height:500px" />
+                            </div>
+                        </div>
+                    }
+
+                }
+            </div>
 
             <!-- /END THE FEATURETTES -->
         </div><!-- /.container -->
         <!-- FOOTER -->
         <footer class="container">
-            <p class="float-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            <ul class="pagination">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">上一页</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">下一页</a></li>
+                <li><a href="#">尾页</a></li>
+            </ul>
         </footer>
     </main>
     <!-- Bootstrap core JavaScript
@@ -177,14 +185,13 @@
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="~/1/holder.min.js"></script>
 
-    <script>
+    @*<script>
         function wan() {
             alert("好！");
         }
-        function add()
-        {
+        function add() {
             location.href = "/Staff/Add";
         }
-    </script>
+    </script>*@
 </body>
 </html>

@@ -18,7 +18,7 @@ namespace ERP_MODEL
         public string RoleName { get; set; }//角色名称
         public double RoleSalary { get; set; }//角色工资
         public int Rolejurisdiction { get; set; }//角色权限  // 员工 0，,经理 1 ，老板 2
-        public DepartmentModel departmens { get; set; }
+        public virtual DepartmentModel departmens { get; set; }
         [JsonIgnore]
         public ICollection<StaffModel> sta { get; set; }
     }

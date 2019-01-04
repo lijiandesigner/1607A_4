@@ -24,7 +24,8 @@ namespace ERP_DAL
         //请假信息显示
         public List<LeaveModel> ShowLeave()
         {
-            return content.leaves.ToList();
+            List<LeaveModel> q= content.leaves.ToList();
+            return q;
         }
         //请假删除
         public int DelLeave(int id)
