@@ -46,5 +46,9 @@ namespace ERP_BLL
         {
             return dal.TShowStaff(Name, JobNumber);
         }
+        public int Login(string username, string password)
+        {
+            return dal.Login(username, password);
+        }
     }
 }
