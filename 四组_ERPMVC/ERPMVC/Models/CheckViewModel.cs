@@ -13,7 +13,7 @@ namespace ERPMVC.Models
         /// </summary>
         public int CheckID { get; set; }
         /// <summary>
-        /// 员工工号   外键
+        /// 员工id
         /// </summary>
         public int StaffId { get; set; }
         /// <summary>

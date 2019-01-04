@@ -46,11 +46,29 @@ namespace ERP_Api.Controllers
 
             return bll.UpdStaff(Sta);
         }
+        [HttpGet]
+        public int Login(string username, string password)
+        {
+            int result = bll.Login(username, password);
+            if (result > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
 
         [HttpGet]
         public List<StaffModel> TShowStaff(string Name, string JobNumber)
         {
             return bll.TShowStaff(Name, JobNumber);
+        }
+        [HttpGet]
+        public StaffModel JudgeSraff([FromUri]string JobNumber, string StaffPassword)
+        {
+            return bll.JudgeSraff(JobNumber,StaffPassword);
         }
     }
 }

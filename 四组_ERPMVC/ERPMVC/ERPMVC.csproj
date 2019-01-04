@@ -331,6 +331,7 @@
     <Content Include="Views\RenShi\dimissionIndex.cshtml" />
     <Content Include="Views\RenShi\LeaveIndex.cshtml" />
     <Content Include="Views\DepBoss\Zhu.cshtml" />
+    <Content Include="Views\Punch\Punch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
