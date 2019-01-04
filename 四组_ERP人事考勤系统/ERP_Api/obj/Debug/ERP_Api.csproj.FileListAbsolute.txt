@@ -229,3 +229,6 @@ D:\练习技能\ERP\四组_ERP人事考勤系统\ERP_Api\obj\Debug\ERP_Api.cspro
 D:\练习技能\ERP\四组_ERP人事考勤系统\ERP_Api\obj\Debug\ERP_Api.csproj.CopyComplete
 D:\练习技能\ERP\四组_ERP人事考勤系统\ERP_Api\obj\Debug\ERP_Api.dll
 D:\练习技能\ERP\四组_ERP人事考勤系统\ERP_Api\obj\Debug\ERP_Api.pdb
+D:\练习技能\ERP\四组_ERP人事考勤系统\ERP_Api\bin\roslyn\csc.rsp
+D:\练习技能\ERP\四组_ERP人事考勤系统\ERP_Api\bin\roslyn\csi.rsp
+D:\练习技能\ERP\四组_ERP人事考勤系统\ERP_Api\bin\roslyn\vbc.rsp

@@ -127,10 +127,12 @@
             </div><!-- /.row -->*@
             <!-- START THE FEATURETTES -->
             <div id="box111">
+
                 @foreach (var item in Model)
-                {
-                    if (item.StaffId % 2 == 0)
-                    {
+                            {
+                                var a = 1;
+                                if (a % 2 == 0)
+                                {
                         <hr class="featurette-divider">
 
                         <div class="row featurette">
@@ -142,6 +144,7 @@
                                 <img class="featurette-image img-fluid mx-auto" src="@item.HandImg" alt="Alternate Text" style="width:500px;height:500px" />
                             </div>
                         </div>
+                        a++;
                     }
                     else
                     {
@@ -155,6 +158,7 @@
                                 <img class="featurette-image img-fluid mx-auto" src="@item.HandImg" alt="Alternate Text" style="width:500px;height:500px" />
                             </div>
                         </div>
+                        a++;
                     }
 
                 }
@@ -165,13 +169,12 @@
         <!-- FOOTER -->
         <footer class="container">
             <ul class="pagination">
-                <li><a href="#">首页</a></li>
-                <li><a href="#">上一页</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">下一页</a></li>
-                <li><a href="#">尾页</a></li>
+                <li><a href="#" onclick="up()">上一页</a></li>
+                @for (int i = 1; i <= @ViewBag.count; i++)
+                {
+                    <li><a href="#" onclick="go(@i)" id="@i">@i</a></li>
+                }
+                <li><a href="#" onclick="down()">下一页</a></li>
             </ul>
         </footer>
     </main>
@@ -185,13 +188,32 @@
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="~/1/holder.min.js"></script>
 
-    @*<script>
-        function wan() {
-            alert("好！");
+    <script>
+        function up() {
+            var a = @ViewBag.page;
+            if (a == 1) {
+                alert("已经是首页了！");
+            } else {
+                var b = Number(a) - 1;
+                location.href = "/DepBoss/Index?pageindex=" + b;
+
+            }
         }
-        function add() {
-            location.href = "/Staff/Add";
+            function down() {
+            var a = @ViewBag.page;
+            if (a == @ViewBag.count) {
+                alert("已经是尾页了！");
+            } else {
+                var b = Number(a) + 1;
+                location.href = "/DepBoss/Index?pageindex=" + b;
+
+            }
         }
-    </script>*@
+
+        function go(data)
+        {
+            location.href = "/DepBoss/Index?pageindex=" + data;
+        }
+    </script>
 </body>
 </html>

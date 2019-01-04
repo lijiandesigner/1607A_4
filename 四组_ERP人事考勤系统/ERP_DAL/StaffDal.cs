@@ -17,11 +17,15 @@ namespace ERP_DAL
             return content.SaveChanges();
 
         }
-        //显示
-        public List<StaffModel> ShowStaff()
+        public List<StaffModel> Quan()
         {
-
             return content.staffs.ToList();
+        }
+        //显示
+        public List<StaffModel> ShowStaff(int pageindex, int pagesize)
+        {
+            List<StaffModel> a = content.staffs.ToList();
+            return a.Skip((pageindex - 1) * pagesize).Take(pagesize).ToList();
         }
         //删除
         public int DelStaff(int id)

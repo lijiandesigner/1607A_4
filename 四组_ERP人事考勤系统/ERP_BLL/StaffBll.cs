@@ -17,11 +17,14 @@ namespace ERP_BLL
             return dal.AddStaff(Sta);
 
         }
-        //显示
-        public List<StaffModel> ShowStaff()
+        public List<StaffModel> Quan()
         {
-
-            return dal.ShowStaff();
+            return dal.Quan();
+        }
+        //显示
+        public List<StaffModel> ShowStaff(int pageindex, int pagesize)
+        {
+            return dal.ShowStaff(pageindex,pagesize);
         }
         //删除
         public int DelStaff(int id)

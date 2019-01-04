@@ -150,6 +150,7 @@
     <Compile Include="Controllers\DepBossController.cs" />
     <Compile Include="Controllers\FinaceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RenShiController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Global.asax.cs">
@@ -266,6 +267,38 @@
     <Content Include="Content\js\select2.min.js" />
     <Content Include="Content\js\toggles.min.js" />
     <Content Include="Content\js\wysihtml5-0.3.0.min.js" />
+    <Content Include="Content\My97DatePicker\calendar.js" />
+    <Content Include="Content\My97DatePicker\config.js" />
+    <Content Include="Content\My97DatePicker\lang\en.js" />
+    <Content Include="Content\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Content\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Content\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="Content\My97DatePicker\skin\blueFresh\datepicker.css" />
+    <Content Include="Content\My97DatePicker\skin\blueFresh\img.gif" />
+    <Content Include="Content\My97DatePicker\skin\BuMen.gif" />
+    <Content Include="Content\My97DatePicker\skin\crm.GIF" />
+    <Content Include="Content\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Content\My97DatePicker\skin\default1\datepicker.css" />
+    <Content Include="Content\My97DatePicker\skin\default1\img.gif" />
+    <Content Include="Content\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Content\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Content\My97DatePicker\skin\salary.gif" />
+    <Content Include="Content\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Content\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Content\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Content\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Content\My97DatePicker\WdatePicker.js" />
+    <Content Include="Content\My97DatePicker\开发包\lang\en.js" />
+    <Content Include="Content\My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="Content\My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="Content\My97DatePicker\开发包\readme.txt" />
+    <Content Include="Content\My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="Content\My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="Content\My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="Content\My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="Content\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="Content\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="Content\My97DatePicker\开发包\skin\whyGreen\img.gif" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -291,6 +324,11 @@
     <Content Include="Content\js\ckeditor\,CKEDITOR.tools.htmlEncode%28e.id__" />
     <Content Include="Content\js\ckeditor\,CKEDITOR.tools.htmlEncode%28e._[" />
     <Content Include="Content\js\ckeditor\images\_div style=" />
+    <Content Include="Content\My97DatePicker\lang\vssver2.scc" />
+    <Content Include="Content\My97DatePicker\skin\default1\vssver2.scc" />
+    <Content Include="Content\My97DatePicker\skin\vssver2.scc" />
+    <Content Include="Content\My97DatePicker\skin\whyGreen\vssver2.scc" />
+    <Content Include="Content\My97DatePicker\vssver2.scc" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -334,6 +372,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
