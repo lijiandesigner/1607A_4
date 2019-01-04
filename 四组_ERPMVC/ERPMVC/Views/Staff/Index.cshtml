@@ -1,4 +1,5 @@
 ﻿@*@model IEnumerable<ERP.Models.Student>*@
+@model ERPMVC.Models.StaffViewModel
 <!doctype html>
 <html lang="en">
 <head>
@@ -51,7 +52,7 @@
                 <div class="carousel-item active">
 
                     <img class="second-slide" src="~/Image/8501bf32ff0d9d9b74f8b494aebdf31c_t010461c547354fb45f.jpg" = alt="Second slide" onclick="wan()">
-     
+
 
                 </div>
                 <div class="carousel-item">
@@ -85,29 +86,29 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <table class="table table-hover" style="color:white">
-                        <thead>
-                            <tr>
-                                <td>员工工号</td>
-                                <td>员工姓名</td>
-                                <td>请假开始日期</td>
-                                <td>请假结束日期</td>
-                                <td>请假状态</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in ViewBag.qj)
-                            {
+                    @*<table class="table table-hover" style="color:white">
+                            <thead>
                                 <tr>
-                                    <td>@item.staffs.JobNumber</td>
-                                    <td>@item.staffs.StaffName</td>
-                                    <td>@item.StartTime</td>
-                                    <td>@item.EndTime</td>
-                                    <td>@item.LeaveState</td>
+                                    <td>员工工号</td>
+                                    <td>员工姓名</td>
+                                    <td>请假开始日期</td>
+                                    <td>请假结束日期</td>
+                                    <td>请假状态</td>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in ViewBag.qj)
+                                {
+                                    <tr>
+                                        <td>@item.staffs.JobNumber</td>
+                                        <td>@item.staffs.StaffName</td>
+                                        <td>@item.StartTime</td>
+                                        <td>@item.EndTime</td>
+                                        <td>@item.LeaveState</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>*@
                     <div class="container">
                         <div class="carousel-caption">
                             <h1></h1>
@@ -141,10 +142,10 @@
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="rounded-circle" src="@ViewBag.img " alt="Generic placeholder image" width="140" height="140">
-<h2>@ViewBag.name</h2>
+                    <h2>@ViewBag.name</h2>
 
 
-<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     @*<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>*@
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
@@ -163,11 +164,47 @@
             <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
         </footer>
     </main>
-    <div style="width:70%;height:70%;float:right;background-color:red;margin-top:-40%;margin-left:15%;position:absolute" id="box">
+    <div style="width:70%;height:70%;float:right;background-color:red;margin-top:-60%;margin-left:15%;position:absolute" id="box">
         <input id="Button1" type="button" value="button" onclick="qq()" />
     </div>
-    <div style="width:70%;height:70%;float:right;background-color:red;margin-top:-40%;margin-left:15%;position:absolute" id="box1">
-        <input id="Button2" type="button" value="button" onclick="qqqq()" />
+    <div style="width:70%;height:70%;float:right;background-color:white;margin-top:-60%;margin-left:15%;position:absolute" id="box1">
+        <input id="Button2" type="button" value="X" onclick="qqqq()" />
+        <form action="StaffUpd" method="post">
+            <table style="margin-left:300px; height:400px;width:400px;">
+                <tr>
+                    <td>  工号 </td>
+                    <td>  @Html.TextBoxFor(model=>model.JobNumber)</td>
+                </tr>
+                <tr>
+                    <td>  姓名  </td>
+                    <td>  @Html.TextBoxFor(model=>model.StaffName) </td>
+                </tr>
+
+                <tr>
+                    <td> 员工性别  </td>
+                    <td>
+                        @Html.RadioButtonFor(model => model.StaffSex, true, new { @checked= "checked"}) 男
+                        @Html.RadioButtonFor(model => model.StaffSex, false) 女
+                    </td>
+                </tr>
+                <tr>
+                    <td>  员工手机号  </td>
+                    <td> @Html.TextBoxFor(model=>model.StaffPhone)   </td>
+                </tr>
+                <tr>
+                    <td>  员工邮箱  </td>
+                    <td> @Html.TextBoxFor(model => model.StaffEmail) </td>
+                </tr>
+                <tr>
+                    <td>  密码  </td>
+                    <td>  @Html.TextBoxFor(model => model.StaffPassword)  </td>
+                </tr>
+                <tr>
+                    <td>    </td>
+                    <td style="margin-left:150px;"> <input id="Submit1" type="submit" value="修改" /> </td>
+                </tr>
+            </table>
+        </form>
     </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->

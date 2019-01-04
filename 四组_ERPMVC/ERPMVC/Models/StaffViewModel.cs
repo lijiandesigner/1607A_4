@@ -34,5 +34,7 @@ namespace ERPMVC.Models
         public string Dep { get; set; }
         [Display(Name = "密码")]
         public string StaffPassword { get; set; }
+        public RoleViewModel st { get; set; }
+      
     }
 }
