@@ -1,7 +1,7 @@
 ﻿@model ERPMVC.Models.StaffViewModel
 
 @{
-    ViewBag.Title = "Add";
+    Layout = "~/Views/RSMater.cshtml";
 }
 
 <h2>Add</h2>
@@ -98,7 +98,7 @@
 
 <script>
     $('#Dep').change(function () {
-       
+
         var pid = $('#Dep').val();//选择省份Id
         $.ajax({
             url: "/Staff/Wan",
