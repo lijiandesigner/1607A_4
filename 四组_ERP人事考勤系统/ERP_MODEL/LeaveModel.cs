@@ -18,6 +18,6 @@ namespace ERP_MODEL
         public DateTime EndTime { get; set; }    // 请假结束时间
         public string LeaveCause { get; set; }   // 离开原因
         public string LeaveState { get; set; }   // 请假状态
-        public StaffModel staffs { get; set; }
+        public virtual StaffModel staffs { get; set; }
     }
 }
