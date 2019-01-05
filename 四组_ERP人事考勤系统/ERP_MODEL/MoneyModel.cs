@@ -54,6 +54,6 @@ namespace ERP_MODEL
         /// </summary>
         public string StaffState { get; set; }
 
-        public StaffModel staffs { get; set; }
+        public  StaffModel staffs { get; set; }
     }
 }
