@@ -10,7 +10,6 @@ namespace ERPMVC.Controllers
 {
     public class StaffController : Controller
     {
-        int id = 3;
         // GET: Staff
         public ActionResult Index()
         {
@@ -88,65 +87,6 @@ namespace ERPMVC.Controllers
                                Value = r.RoleId.ToString()
                            };
             return PartialView("Role");
-        }
-
-        public ActionResult QJ(string start,string end,string rem)
-        {
-            LeaveViewModel l = new LeaveViewModel();
-            l.StartTime =Convert.ToDateTime(start);
-            l.EndTime = Convert.ToDateTime(end);
-            l.LeaveState = "待审核";
-            l.LeaveCause = rem;
-            l.StaffId = id;
-            string json = JsonConvert.SerializeObject(l);
-            string str = HttpClientHelper.Send("post", "api/LeaveApi", json);
-            if (str == "1")
-            {
-                return Content("1");
-            }
-            else
-            {
-                return Content("0");
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public ActionResult fenye1(int pageindex)
-        {
-            ViewBag.page = pageindex;
-            string str = HttpClientHelper.Send("get", "api/CheckApi/", null);
-            List<CheckViewModel> list = JsonConvert.DeserializeObject<List<CheckViewModel>>(str);
-            list = list.Skip((pageindex - 1) * 4).Take(4).ToList();
-            return PartialView("FenYeKQ", list);
-        }
-
-        public ActionResult fenye2(int pageindex)
-        {
-            ViewBag.page1 = pageindex;
-            string str2 = HttpClientHelper.Send("get", "/api/LeaveApi", null);
-            List<LeaveViewModel> list2 = JsonConvert.DeserializeObject<List<LeaveViewModel>>(str2);
-            list2 = list2.Skip((pageindex - 1) * 1).Take(1).ToList();
-            return PartialView("FenYeQJ", list2);
         }
     }
 }

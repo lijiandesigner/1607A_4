@@ -59,5 +59,25 @@ namespace ERP_DAL
         {
             return content.staffs.Where(m => m.JobNumber == JobNumber || m.StaffName == Name).ToList();
         }
+        public int Login(string username, string password)
+        {
+            var list = from s in content.staffs.Where(s => s.StaffPhone == username && s.StaffPassword == password) select s;
+            return list.Count();
+        }
+        public StaffModel JudgeSraff(string JobNumber, string StaffPassword)
+        {
+            var jie = content.staffs.Where(s => s.JobNumber == JobNumber && s.StaffPassword == StaffPassword).FirstOrDefault();
+            if (jie != null)
+            {
+                StaffModel staff = new StaffModel();
+                staff = jie;
+                return staff;
+
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

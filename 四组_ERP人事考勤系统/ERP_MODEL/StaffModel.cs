@@ -34,7 +34,7 @@ namespace ERP_MODEL
         [ForeignKey("Roles")]
         public int RoleId { get; set; }
         public string StaffPassword { get; set; }  // 员工密码
-        public RoleModel Roles { get; set; }
+        public virtual RoleModel Roles { get; set; }
         [JsonIgnore]
         public ICollection<LeaveModel> lea { get; set; }
         [JsonIgnore]
