@@ -23,5 +23,6 @@ namespace ERP_DAL
         public virtual DbSet<LeaveModel> leaves { get; set; }
         public virtual DbSet<DepartmentModel> departments { get; set; }
         public virtual DbSet<MoneyModel> moneys { get; set; }
+        public virtual DbSet<DimissionModel> dimission { get; set; }
     }
 }

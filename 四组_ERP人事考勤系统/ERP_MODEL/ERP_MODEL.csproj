@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CheckModel.cs" />
     <Compile Include="DepartmentModel.cs" />
+    <Compile Include="DimissionModel.cs" />
     <Compile Include="LeaveModel.cs" />
     <Compile Include="MoneyModel.cs" />
     <Compile Include="RoleModel.cs" />
