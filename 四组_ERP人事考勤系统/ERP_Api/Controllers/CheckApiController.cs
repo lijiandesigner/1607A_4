@@ -43,10 +43,15 @@ namespace ERP_Api.Controllers
             return bll.Fan(id);
         }
         // 条件查询
+        //[HttpGet]
+        //public List<CheckModel> TShowCheck(string Name,DateTime date)
+        //{
+        //    return bll.TShowCheck(Name, date);
+        //}
         [HttpGet]
-        public List<CheckModel> TShowCheck(string Name,DateTime date)
+        public CheckModel PunchShow(int id, DateTime time)
         {
-            return bll.TShowCheck(Name, date);
+            return bll.PunchShow(id, time);
         }
     }
 }

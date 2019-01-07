@@ -41,5 +41,9 @@ namespace ERP_BLL
         {
             return dal.TShowCheck(Name, date);
         }
+        public CheckModel PunchShow(int id, DateTime time)
+        {
+            return dal.PunchShow(id, time);
+        }
     }
 }

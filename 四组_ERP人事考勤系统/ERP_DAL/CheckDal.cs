@@ -49,9 +49,15 @@ namespace ERP_DAL
         /// <param name="Name"></param>
         /// <param name="date"></param>
         /// <returns></returns>
-        public List<CheckModel> TShowCheck(string Name,DateTime date)
+        public List<CheckModel> TShowCheck(string Name, DateTime date)
         {
             return content.checks.Where(m => m.staffs.StaffName == Name || m.MorningHours > date).ToList();
+
+
+        }
+        public CheckModel PunchShow(int id,DateTime time)
+        {
+            return content.checks.Where(s => s.StaffId == id && s.MorningHours > time).FirstOrDefault();
         }
     }
 }

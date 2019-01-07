@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using ERPMVC.Models;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace ERPMVC.Controllers
 {
@@ -86,7 +88,22 @@ namespace ERPMVC.Controllers
         [HttpGet]
         public ActionResult StaffUpd(int id)
         {
-            return View();
+            Uri uri = new Uri("http://localhost:56425/");
+            HttpClient client = new HttpClient();
+            client.BaseAddress = uri;//赋值API地址
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));//转换成json字符串格式
+            HttpResponseMessage response = client.GetAsync("/api/StaffApi/" + id).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string jie = response.Content.ReadAsStringAsync().Result;
+                var list = JsonConvert.DeserializeObject<StaffViewModel>(jie);
+                return View(list);
+            }
+            else
+            {
+                return View();
+            }
+           
         }
         public ActionResult StaffUpd(StaffViewModel Staff)
         {
