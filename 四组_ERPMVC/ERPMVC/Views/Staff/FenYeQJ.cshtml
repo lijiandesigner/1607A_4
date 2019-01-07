@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ERPMVC.Models.LeaveViewModel>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.staffs.JobNumber</td>
+        <td>@item.staffs.StaffName</td>
+        <td>@item.StartTime</td>
+        <td>@item.EndTime</td>
+        <td>@item.LeaveState</td>
+    </tr>
+}

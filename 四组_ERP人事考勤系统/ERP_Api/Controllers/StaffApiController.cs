@@ -20,11 +20,17 @@ namespace ERP_Api.Controllers
         }
         //显示
         [HttpGet]
-        public List<StaffModel> ShowStaff()
+        public List<StaffModel> ShowStaff(int pageindex,int pagesize)
         {
-
-            return bll.ShowStaff();
+            return bll.ShowStaff(pageindex,pagesize);
         }
+
+        [HttpGet]
+        public List<StaffModel> Quan()
+        {
+            return bll.Quan();
+        }
+
         //删除
         [HttpDelete]
         public int DelStaff(int id)

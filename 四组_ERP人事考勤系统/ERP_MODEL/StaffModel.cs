@@ -39,5 +39,8 @@ namespace ERP_MODEL
         public ICollection<LeaveModel> lea { get; set; }
         [JsonIgnore]
         public ICollection<CheckModel> che { get; set; }
+        [JsonIgnore]
+        public ICollection<DimissionModel> dim { get; set; }
+        
     }
 }

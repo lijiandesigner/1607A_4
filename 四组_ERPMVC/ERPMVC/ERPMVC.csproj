@@ -148,6 +148,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DepBossController.cs" />
+    <Compile Include="Controllers\DimissionController.cs" />
     <Compile Include="Controllers\FinaceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PunchController.cs" />
@@ -428,14 +429,15 @@
     <Content Include="Views\Finace\Personnel.cshtml" />
     <Content Include="Views\Finace\finance.cshtml" />
     <Content Include="Views\RSMater.cshtml" />
-    <Content Include="Views\RenShi\EntryIndex.cshtml" />
     <Content Include="Views\RenShi\dimissionIndex.cshtml" />
     <Content Include="Views\RenShi\LeaveIndex.cshtml" />
     <Content Include="Views\DepBoss\Zhu.cshtml" />
     <Content Include="Views\Punch\Punch.cshtml" />
+    <Content Include="Views\RenShi\ShenResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Dimission\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

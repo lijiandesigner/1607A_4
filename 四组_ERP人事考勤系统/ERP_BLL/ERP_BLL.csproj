@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CheckBll.cs" />
     <Compile Include="DepartmentBll.cs" />
+    <Compile Include="Dimissionbll.cs" />
     <Compile Include="MoneyBll.cs" />
     <Compile Include="RoleBll.cs" />
     <Compile Include="LeaveBll.cs" />
