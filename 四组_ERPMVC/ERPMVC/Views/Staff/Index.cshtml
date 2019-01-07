@@ -10,6 +10,8 @@
     <title>Carousel Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
     <link href="~/1/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <!-- Custom styles for this template -->
     <link href="~/Scripts/carousel.css" rel="stylesheet" />
     <script src="~/1/jquery.unobtrusive-ajax.js"></script>
@@ -21,38 +23,14 @@
         {
             <input id="Submit1" type="submit" value="submit" class="btn btn-primary" />
         }*@
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Carousel</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-                <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </header>
+    <header></header>
     <main role="main">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
 
                     <img class="second-slide" src="~/Image/8501bf32ff0d9d9b74f8b494aebdf31c_t010461c547354fb45f.jpg" = alt="Second slide" onclick="wan()">
-     
+
 
                 </div>
                 <div class="carousel-item">
@@ -65,7 +43,7 @@
                                 <td>当日考勤状态</td>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="boxKQ">
                             @foreach (var item in ViewBag.KQ)
                             {
                                 <tr>
@@ -81,16 +59,8 @@
                         <div class="carousel-caption">
                             <h1></h1>
                             <p></p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">考勤信息表</a></p>
+                            @*<p><a class="btn btn-lg btn-primary" href="#" role="button">考勤信息表</a></p>*@
                         </div>
-                        <ul class="pagination">
-                            <li><a href="#" onclick="up()">上一页</a></li>
-                            @for (int i = 1; i <= 3; i++)
-                            {
-                                <li><a href="#" onclick="go(@i)" id="@i">@i</a></li>
-                            }
-                            <li><a href="#" onclick="down()">下一页</a></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -104,7 +74,7 @@
                                 <td>请假状态</td>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="boxQJ">
                             @foreach (var item in ViewBag.qj)
                             {
                                 <tr>
@@ -119,12 +89,12 @@
                     </table>
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1></h1>
-                            <p></p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">请假信息表</a></p>
+                        
+                            @*<p><a class="btn btn-lg btn-primary" href="#" role="button">请假信息表</a></p>*@
                         </div>
                     </div>
                 </div>
+
             </div>
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -150,10 +120,10 @@
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="rounded-circle" src="@ViewBag.img " alt="Generic placeholder image" width="140" height="140">
-<h2>@ViewBag.name</h2>
+                    <h2>@ViewBag.name</h2>
 
 
-                <p></p>
+                    <p></p>
                     @*<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>*@
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
@@ -168,11 +138,11 @@
         </div><!-- /.container -->
         <!-- FOOTER -->
         <footer class="container">
-            <p class="float-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            @*<p class="float-right"><a href="#">Back to top</a></p>
+                <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>*@
         </footer>
     </main>
-    <div style="width:680px;height:250px;float:right;background-color:white;margin-top:-50%;margin-left:35%;position:absolute" id="box">
+    <div style="width:680px;height:250px;float:right;background-color:white;margin-top:-35%;margin-left:35%;position:absolute" id="box">
         <lable style="margin-top:10px">请假开始时间：</lable><textarea id="TextArea1" rows="2" cols="20" onclick="WdatePicker()" style="margin-top:10px"></textarea> &nbsp;&nbsp;&nbsp;&nbsp;
         <lable style="margin-top:10px">请假截止时间：</lable> <textarea id="TextArea2" rows="2" cols="20" onclick="WdatePicker()" style="margin-top:10px"></textarea><br /><br /><br />
         <lable style="margin-left:150px">请假原因：</lable> <textarea id="TextArea3" rows="2" cols="20"></textarea>
@@ -195,8 +165,7 @@
     <script src="~/1/holder.min.js"></script>
 
     <script>
-        window.onload = function ()
-        {
+        window.onload = function () {
             $("#box1").hide();
             $("#box").hide();
         }
@@ -213,15 +182,13 @@
                 type: "get",
                 dataType: "Json",
                 url: "/Staff/QJ",
-                success: function (data)
-                {
+                success: function (data) {
                     if (data > 0) {
                         alert("申请成功！等待领导审核！");
                         $("#TextArea1").text = "";
                         $("#TextArea2").text = "";
                         $("#TextArea3").text = "";
-                    } else
-                    {
+                    } else {
                         alert("申请失败！");
                     }
                 }
@@ -234,8 +201,7 @@
             $("#box1").hide();
         }
 
-        function guan()
-        {
+        function guan() {
             $("#box").hide();
         }
     </script>

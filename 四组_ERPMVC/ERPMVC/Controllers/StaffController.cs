@@ -14,12 +14,13 @@ namespace ERPMVC.Controllers
         // GET: Staff
         public ActionResult Index()
         {
-            id = 3;
+            id = 3;   // 假设登陆人Id
             string str = HttpClientHelper.Send("get","api/CheckApi/",null);
             List<CheckViewModel> list = JsonConvert.DeserializeObject<List<CheckViewModel>>(str);
             ViewBag.KQ = from a in list.AsEnumerable()
                          where a.StaffId==id
                          select a;  // 该员工考勤的表显示
+            ViewBag.KQlast =Math.Ceiling(list.Count *1.0/ 5);
 
             string str1 = HttpClientHelper.Send("get", "/api/StaffApi?pageindex=0&pagesize=1", null);
             List<StaffViewModel> list1 = JsonConvert.DeserializeObject<List<StaffViewModel>>(str1);
@@ -107,6 +108,45 @@ namespace ERPMVC.Controllers
             {
                 return Content("0");
             }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public ActionResult fenye1(int pageindex)
+        {
+            ViewBag.page = pageindex;
+            string str = HttpClientHelper.Send("get", "api/CheckApi/", null);
+            List<CheckViewModel> list = JsonConvert.DeserializeObject<List<CheckViewModel>>(str);
+            list = list.Skip((pageindex - 1) * 4).Take(4).ToList();
+            return PartialView("FenYeKQ", list);
+        }
+
+        public ActionResult fenye2(int pageindex)
+        {
+            ViewBag.page1 = pageindex;
+            string str2 = HttpClientHelper.Send("get", "/api/LeaveApi", null);
+            List<LeaveViewModel> list2 = JsonConvert.DeserializeObject<List<LeaveViewModel>>(str2);
+            list2 = list2.Skip((pageindex - 1) * 1).Take(1).ToList();
+            return PartialView("FenYeQJ", list2);
         }
     }
 }
