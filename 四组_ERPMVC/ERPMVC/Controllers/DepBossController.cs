@@ -11,10 +11,14 @@ namespace ERPMVC.Controllers
     public class DepBossController : Controller
     {
         // GET: DepBoss
-        public ActionResult Index()
+        public ActionResult Index(int pageindex=1)
         {
-            string str = HttpClientHelper.Send("get","/api/StaffApi",null);
+            ViewBag.page = pageindex;
+            string str = HttpClientHelper.Send("get", "/api/StaffApi?pageindex="+pageindex+"&pagesize=3", null);
             List<StaffViewModel> list = JsonConvert.DeserializeObject<List<StaffViewModel>>(str);
+            string str1 = HttpClientHelper.Send("get", "/api/StaffApi", null);
+            List<StaffViewModel> list1 = JsonConvert.DeserializeObject<List<StaffViewModel>>(str1);
+            ViewBag.count =Math.Ceiling(list1.Count*1.0/3);
             return View(list);
         }
 

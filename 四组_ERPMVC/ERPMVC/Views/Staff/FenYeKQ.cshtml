@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ERPMVC.Models.CheckViewModel>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.staffs.JobNumber</td>
+        <td>@item.staffs.StaffName</td>
+        <td>@item.MorningHours</td>
+        <td>@item.StaffState</td>
+    </tr>
+}

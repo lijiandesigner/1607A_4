@@ -11,41 +11,20 @@
     <title>Carousel Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
     <link href="~/1/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <!-- Custom styles for this template -->
     <link href="~/Scripts/carousel.css" rel="stylesheet" />
     <script src="~/1/jquery.unobtrusive-ajax.js"></script>
     <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Content/My97DatePicker/WdatePicker.js"></script>
 </head>
 <body>
     @*@using (Ajax.BeginForm("bufen1", "Home", new AjaxOptions { UpdateTargetId = "box111" }))
         {
             <input id="Submit1" type="submit" value="submit" class="btn btn-primary" />
         }*@
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Carousel</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-                <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </header>
+    <header></header>
     <main role="main">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -65,8 +44,8 @@
                                 <td>当日考勤状态</td>
                             </tr>
                         </thead>
-                        <tbody>
-                            @foreach (var item in ViewBag.a)
+                        <tbody id="boxKQ">
+                            @foreach (var item in ViewBag.KQ)
                             {
                                 <tr>
                                     <td>@item.staffs.JobNumber</td>
@@ -81,42 +60,42 @@
                         <div class="carousel-caption">
                             <h1></h1>
                             <p></p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">考勤信息表</a></p>
+                            @*<p><a class="btn btn-lg btn-primary" href="#" role="button">考勤信息表</a></p>*@
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    @*<table class="table table-hover" style="color:white">
-                            <thead>
+                    <table class="table table-hover" style="color:white">
+                        <thead>
+                            <tr>
+                                <td>员工工号</td>
+                                <td>员工姓名</td>
+                                <td>请假开始日期</td>
+                                <td>请假结束日期</td>
+                                <td>请假状态</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.qj)
+                            {
                                 <tr>
-                                    <td>员工工号</td>
-                                    <td>员工姓名</td>
-                                    <td>请假开始日期</td>
-                                    <td>请假结束日期</td>
-                                    <td>请假状态</td>
+                                    <td>@item.staffs.JobNumber</td>
+                                    <td>@item.staffs.StaffName</td>
+                                    <td>@item.StartTime</td>
+                                    <td>@item.EndTime</td>
+                                    <td>@item.LeaveState</td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in ViewBag.qj)
-                                {
-                                    <tr>
-                                        <td>@item.staffs.JobNumber</td>
-                                        <td>@item.staffs.StaffName</td>
-                                        <td>@item.StartTime</td>
-                                        <td>@item.EndTime</td>
-                                        <td>@item.LeaveState</td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>*@
+                            }
+                        </tbody>
+                    </table>
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1></h1>
-                            <p></p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">请假信息表</a></p>
+                        
+                            @*<p><a class="btn btn-lg btn-primary" href="#" role="button">请假信息表</a></p>*@
                         </div>
                     </div>
                 </div>
+
             </div>
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -145,7 +124,7 @@
                     <h2>@ViewBag.name</h2>
 
 
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     @*<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>*@
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
@@ -160,11 +139,11 @@
         </div><!-- /.container -->
         <!-- FOOTER -->
         <footer class="container">
-            <p class="float-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            @*<p class="float-right"><a href="#">Back to top</a></p>
+                <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>*@
         </footer>
     </main>
-    <div style="width:70%;height:70%;float:right;background-color:red;margin-top:-60%;margin-left:15%;position:absolute" id="box">
+    <div style="width:70%;height:70%;float:right;background-color:red;margin-top:-40%;margin-left:15%;position:absolute" id="box">
         <input id="Button1" type="button" value="button" onclick="qq()" />
     </div>
     <div style="width:70%;height:70%;float:right;background-color:white;margin-top:-60%;margin-left:15%;position:absolute" id="box1">
@@ -217,27 +196,44 @@
     <script src="~/1/holder.min.js"></script>
 
     <script>
-        $()
-        {
-            $("#box").hide();
+        window.onload = function () {
             $("#box1").hide();
+            $("#box").hide();
         }
-
-        function wan() {
-            alert("好！");
-        }
-
         function q() {
             $("#box").show();
         }
         function qq() {
             $("#box").hide();
+            var start = $("#TextArea1").val();
+            var end = $("#TextArea2").val();
+            var rem = $("#TextArea3").val();
+            $.ajax({
+                data: { "start": start, "end": end, "rem": rem },
+                type: "get",
+                dataType: "Json",
+                url: "/Staff/QJ",
+                success: function (data) {
+                    if (data > 0) {
+                        alert("申请成功！等待领导审核！");
+                        $("#TextArea1").text = "";
+                        $("#TextArea2").text = "";
+                        $("#TextArea3").text = "";
+                    } else {
+                        alert("申请失败！");
+                    }
+                }
+            })
         }
         function qqq() {
             $("#box1").show();
         }
         function qqqq() {
             $("#box1").hide();
+        }
+
+        function guan() {
+            $("#box").hide();
         }
     </script>
 </body>
